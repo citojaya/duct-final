@@ -1,0 +1,115 @@
+==============================================================
+# Input File for DEM-CFD model 5x5 duct model
+# Created by: 
+# Contact: 
+==============================================================
+
+==============================================================
+Particle-Wall contact surfaces
+==============================================================
+WALLS
+0
+WALL_NO
+1
+
+==============================================================
+Particle information used in the test program
+==============================================================
+PAR_NUMBER
+22000
+
+==============================================================
+# Material Property #
+# DEN, YMOD, POIS, SFC,  DMPN, ROLFRICT, HAMAKER CONST- (PP PW)
+==============================================================
+MATERIAL
+2.830E3   1.0E7   2.9E-1  0.5   20.0E-4  1E-3   1.5E-20  1.5E-20
+
+==============================================================
+# Electrostatic force
+==============================================================
+PERMITIVITY
+8.885E-12 
+
+CAPACITANCEDISTANCE
+600.0E-9
+
+VOLTAGE1
+4.7
+
+VOLTAGE2
+4.2
+
+IMAGECONSTANT
+2.0
+
+ALPHA
+0.9
+
+KS
+4.48E-5
+
+ESFTRUE
+0
+
+==============================================================
+# Parameters for adhesion between rough surfaces
+# lamda1, lamda2, rms1, rms2
+==============================================================
+ROUGHSURFACE
+1110.0E-9 250.0E-9 0.7E-9 0.7E-9
+
+==============================================================
+# Parameters for capillary force
+# minimum separation, liquid volume
+# surface tension, contact angle
+==============================================================
+CAPILLARY
+5.E-6 9.59E-212 0.013 0
+
+==============================================================
+# Set this value to 0 update DPM particle position
+==============================================================
+DPM
+0
+
+==============================================================
+# Maximum inlet velocity
+==============================================================
+MAXFLOWVEL
+1.0f
+
+==============================================================
+# Domain size of duct problem #
+# ductxmin, ductxmax, ductxedge1, ductxedge2, ductymin, 
+# ductymax, ductzmin, ductzmax, ductzedge
+==============================================================
+GEOMETRY
+0.E-3 142.E-3 100.E-3 105.E-3 -1.0E-3 1.0E-3 -5.E-3 5.E-3 0.0 
+
+==============================================================
+# DEM boundary min and max values in meters
+# xmin, xmax, ymin, ymax, zmin, zmax
+# First findout approximately DEM cell size and set 
+# min and max boundaries so that they offset 2 times of cell size
+==============================================================
+BOUNDARY
+3.0E-3 15.0E-3 -1.5E-3 1.5E-3 -6.E-3 6.0E-3
+
+==============================================================
+# Reference values used in reduce units 
+# largestParDia, largestParDensity
+==============================================================
+REFERENCEVALUES
+0.140E-3 0.830E3
+
+
+==============================================================
+# SIMULATION PARAMETERS #
+# 1. timestep
+# Output times 
+# 2. packing
+==============================================================
+SIMULATION
+5.0E-7f
+

@@ -1,0 +1,85 @@
+==============================================================
+# Input File for DEM-CFD model
+# Created by: 
+# Contact: 
+==============================================================
+
+==============================================================
+Particle-Wall contact surfaces
+==============================================================
+WALLS
+0
+WALL_NO
+1
+
+==============================================================
+Particle information used in the test program
+==============================================================
+PAR_NUMBER
+22000
+
+==============================================================
+# Material Property #
+# DEN, YMOD, POIS, SFC,  DMPN, ROLFRICT, HAMAKER CONST- (PP PW)
+==============================================================
+MATERIAL
+0.830E3   1.0E7   2.9E-1  0.3   20.0E-4  1E-3  2.5E-20f 2.5E-19f
+
+==============================================================
+# Adjustment for porosity calculation
+==============================================================
+PORFACTOR
+1.0
+
+==============================================================
+# Adjustment for fluid source term calculation 
+==============================================================
+SOURCEFACTOR
+0.5
+
+==============================================================
+# Set this value to 0 update DPM particle position
+==============================================================
+DPM
+0
+
+==============================================================
+# Maximum inlet velocity
+==============================================================
+MAXFLOWVEL
+1.0f
+
+==============================================================
+# Domain size of duct problem #
+# ductxmin, ductxmax, ductxedge1, ductxedge2, ductymin, 
+# ductymax, ductzmin, ductzmax, ductzedge
+==============================================================
+GEOMETRY
+0.E-3 142.E-3 100.E-3 105.E-3 -1.0E-3 1.0E-3 -5.E-3 5.E-3 0.0 
+
+==============================================================
+# DEM boundary min and max values in meters
+# xmin, xmax, ymin, ymax, zmin, zmax
+# First findout approximately DEM cell size and set 
+# min and max boundaries so that they offset 2 times of cell size
+==============================================================
+BOUNDARY
+80.0E-3 145.0E-3 -2.2E-3 2.2E-3 -7.E-3 7.E-3
+
+==============================================================
+# Reference values used in reduce units 
+# largestParDia, largestParDensity
+==============================================================
+REFERENCEVALUES
+0.14E-3 0.883E3
+
+
+==============================================================
+# SIMULATION PARAMETERS #
+# 1. timestep
+# Output times 
+# 2. packing
+==============================================================
+SIMULATION
+5.0E-7f
+
